@@ -60,8 +60,28 @@ let car: any = "BMW";
 car = { brand: "BMW", series: 3 };
 
 
-// functions
-function returnMyName() {
+// functions - returns a string
+// refers to return value, not to parameters : string
+function returnMyName(): string {
   return myName;
+  // error because it's a number now that we explicitly defined type string
+  // return myAge;
 }
 console.log(returnMyName());
+
+
+// void type - no return statement
+// throws error if you try to return something
+function sayHello(): void {
+  console.log("Hello!");
+}
+
+
+// argument types: types of function arguments
+function multiply(val1: number, val2: number): number {
+  return val1 * val2;
+}
+
+// return NaN if we don't explicitly define argument types
+// once we define :number & :number it will throw an error
+console.log(multiply(2, 'Max'));
